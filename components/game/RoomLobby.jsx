@@ -150,7 +150,7 @@ export default function RoomLobby() {
           <div className="h-px bg-accent-gold/20 flex-1" />
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
           <input 
             suppressHydrationWarning
             type="text" 
@@ -159,7 +159,7 @@ export default function RoomLobby() {
             onChange={(e) => setJoinCode(e.target.value)}
             className="flex-1 bg-myth-navy/80 border-b-2 border-sacred-blue/40 text-ancient-parchment p-3 outline-none focus:border-sacred-blue uppercase transition-colors font-accent tracking-widest text-center"
           />
-          <TempleButton onClick={handleJoinRoom} className="!px-6">
+          <TempleButton onClick={handleJoinRoom} className="!px-6 w-full sm:w-auto">
             Join
           </TempleButton>
         </div>

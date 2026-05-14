@@ -8,8 +8,8 @@ export default function ScoreBoard() {
   const sortedPlayers = [...players].sort((a, b) => b.score - a.score);
 
   return (
-    <div className="bg-myth-navy/60 border border-accent-gold/20 rounded-xl p-6 backdrop-blur-sm w-full max-w-sm">
-      <h3 className="font-heading text-accent-gold tracking-widest uppercase text-lg text-center mb-6 border-b border-accent-gold/20 pb-4">
+    <div className="bg-myth-navy/60 border border-accent-gold/20 rounded-xl p-4 md:p-6 backdrop-blur-sm w-full max-w-sm md:max-w-md mx-auto">
+      <h3 className="font-heading text-accent-gold tracking-widest uppercase text-sm md:text-lg text-center mb-4 md:mb-6 border-b border-accent-gold/20 pb-2 md:pb-4">
         Chronicles of Glory
       </h3>
       <div className="space-y-3">

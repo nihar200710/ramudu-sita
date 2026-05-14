@@ -175,7 +175,7 @@ export default function Home() {
             )}
           </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-8 mb-16">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-16">
             {players.filter(p => p.id !== socket.id).map(p => (
               <div key={p.id} className="flex flex-col items-center gap-4">
                 <CharacterCard
@@ -196,8 +196,10 @@ export default function Home() {
           )}
         </div>
         
-        <div className="fixed bottom-8 left-8 z-20">
-           <ScoreBoard />
+        <div className="fixed bottom-4 left-4 right-4 md:right-auto md:bottom-8 md:left-8 z-20 pointer-events-none">
+           <div className="pointer-events-auto">
+             <ScoreBoard />
+           </div>
         </div>
       </main>
     );
@@ -213,14 +215,14 @@ export default function Home() {
           initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
           className="z-10 text-center bg-shadow-black/60 p-12 rounded-2xl border border-accent-gold/30 backdrop-blur-md"
         >
-          <h1 className="text-6xl font-heading mb-6 drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl font-heading mb-6 drop-shadow-lg">
             {gameOverData.correct ? (
               <span className="text-accent-gold">Ramudu Found Sita!</span>
             ) : (
               <span className="text-red-500">A Tragic Mistake</span>
             )}
           </h1>
-          <div className="flex flex-wrap justify-center gap-6 my-12">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 my-8 md:my-12">
              {gameOverData.players.map(p => (
                <div key={p.id} className="flex flex-col items-center gap-2">
                  <CharacterCard 
