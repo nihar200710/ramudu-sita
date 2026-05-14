@@ -39,8 +39,8 @@ export default function Home() {
     }
     requestAnimationFrame(raf);
 
-    // Initialize Socket dynamically for LAN play
-    const socketUrl = typeof window !== 'undefined' ? `http://${window.location.hostname}:3001` : 'http://localhost:3001';
+    // Initialize Socket for Production
+    const socketUrl = 'https://ramudu-sita.onrender.com';
     const newSocket = io(socketUrl);
     setSocket(newSocket);
 
