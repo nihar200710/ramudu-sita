@@ -147,7 +147,7 @@ export default function Home() {
 
   if (gameStatus === 'playing') {
     return (
-      <main className="min-h-screen relative flex flex-col items-center justify-center py-20 px-4 overflow-hidden">
+      <main className="min-h-screen relative flex flex-col items-center justify-center py-20 px-4 overflow-x-hidden">
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-myth-navy/90 z-10" />
@@ -196,8 +196,8 @@ export default function Home() {
           )}
         </div>
         
-        <div className="fixed bottom-4 left-4 right-4 md:right-auto md:bottom-8 md:left-8 z-20 pointer-events-none">
-           <div className="pointer-events-auto">
+        <div className="relative w-full mt-12 md:mt-0 md:fixed md:w-auto md:bottom-8 md:left-8 z-20 pointer-events-none">
+           <div className="pointer-events-auto flex justify-center md:block">
              <ScoreBoard />
            </div>
         </div>
