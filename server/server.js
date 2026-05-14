@@ -6,6 +6,9 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
+// Ping route for UptimeRobot / Cron-job.org to keep Render instance awake
+app.get('/ping', (req, res) => res.send('Awake'));
+
 const server = http.createServer(app);
 
 const io = new Server(server, {
