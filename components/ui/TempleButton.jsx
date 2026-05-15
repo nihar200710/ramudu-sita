@@ -5,19 +5,25 @@ export default function TempleButton({ children, onClick, className = '', disabl
   return (
     <motion.button
       suppressHydrationWarning
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
       disabled={disabled}
       onClick={onClick}
-      className={`relative group overflow-hidden border-2 border-accent-gold/40 hover:border-accent-gold bg-myth-navy/80 px-8 py-3 text-accent-gold uppercase tracking-[0.2em] font-heading font-bold shadow-[0_0_15px_rgba(212,175,55,0.1)] hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
+      className={`relative group overflow-hidden border-2 border-heritage-gold/50 hover:border-heritage-gold bg-white/90 backdrop-blur-md px-10 py-4 text-heritage-gold uppercase tracking-[0.2em] font-heading font-bold shadow-[0_4px_20px_rgba(201,162,39,0.15)] hover:shadow-[0_8px_30px_rgba(201,162,39,0.3)] transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed rounded-sm ${className}`}
     >
-      <span className="relative z-10 flex items-center gap-2">{children}</span>
-      <div className="absolute inset-0 bg-gradient-to-r from-accent-gold/0 via-accent-gold/10 to-accent-gold/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-      {/* Corner Ornaments */}
-      <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-accent-gold" />
-      <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-accent-gold" />
-      <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-accent-gold" />
-      <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-accent-gold" />
+      <span className="relative z-10 flex items-center gap-2 drop-shadow-sm group-hover:text-royal-gold transition-colors">{children}</span>
+      
+      {/* Gold Shimmer Sweep */}
+      <div className="absolute inset-0 bg-gradient-to-r from-heritage-gold/0 via-heritage-gold/20 to-heritage-gold/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
+      
+      {/* Floral Glow Bloom on Hover */}
+      <div className="absolute inset-0 bg-floral-accent/0 group-hover:bg-floral-accent/10 transition-colors duration-500" />
+      
+      {/* Engraved Corner Ornaments */}
+      <div className="absolute top-1 left-1 w-3 h-3 border-t-2 border-l-2 border-heritage-gold/60 opacity-70" />
+      <div className="absolute top-1 right-1 w-3 h-3 border-t-2 border-r-2 border-heritage-gold/60 opacity-70" />
+      <div className="absolute bottom-1 left-1 w-3 h-3 border-b-2 border-l-2 border-heritage-gold/60 opacity-70" />
+      <div className="absolute bottom-1 right-1 w-3 h-3 border-b-2 border-r-2 border-heritage-gold/60 opacity-70" />
     </motion.button>
   );
 }

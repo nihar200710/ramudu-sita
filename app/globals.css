@@ -1,20 +1,38 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-myth-navy: #07111F;
-  --color-accent-gold: #D4AF37;
-  --color-sacred-blue: #1E3A8A;
-  --color-ancient-parchment: #E7D7B1;
-  --color-shadow-black: #030303;
+  --color-sacred-ivory: #F8F4EC;
+  --color-ancient-parchment: #EFE3CF;
+  --color-soft-sand: #E8D8C3;
+  --color-heritage-gold: #C9A227;
+  --color-royal-gold: #A67C00;
+  --color-floral-accent: #D9B99B;
 
-  --font-heading: var(--font-cinzel);
-  --font-body: var(--font-inter);
+  --color-text-primary: #3E2723;
+  --color-text-secondary: #5D4037;
+
+  /* Legacy aliases to minimize massive refactoring if some are missed */
+  --color-myth-navy: var(--color-sacred-ivory);
+  --color-accent-gold: var(--color-heritage-gold);
+  --color-sacred-blue: var(--color-royal-gold);
+  --color-shadow-black: var(--color-soft-sand);
+
+  --font-heading: var(--font-cormorant), var(--font-cinzel);
+  --font-body: var(--font-manrope), var(--font-inter);
   --font-accent: var(--font-tiro);
 }
 
 :root {
-  --background: var(--color-myth-navy);
-  --foreground: var(--color-ancient-parchment);
+  --background: var(--color-sacred-ivory);
+  --foreground: var(--color-text-primary);
+}
+
+@utility text-gold-embossed {
+  background: linear-gradient(180deg, #F6E27A 0%, #D4AF37 40%, #A67C00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), -1px -1px 2px rgba(255, 255, 255, 0.5);
 }
 
 body {

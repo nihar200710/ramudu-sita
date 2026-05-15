@@ -1,8 +1,19 @@
-import { Inter, Cinzel_Decorative, Tiro_Devanagari_Sanskrit } from "next/font/google";
+import { Inter, Cinzel_Decorative, Tiro_Devanagari_Sanskrit, Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin"],
+});
+
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -27,9 +38,9 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${cinzel.variable} ${tiro.variable} antialiased`}
+      className={`${inter.variable} ${manrope.variable} ${cormorant.variable} ${cinzel.variable} ${tiro.variable} antialiased`}
     >
-      <body className="min-h-screen bg-myth-navy text-ancient-parchment font-body flex flex-col selection:bg-accent-gold selection:text-myth-navy">
+      <body className="min-h-screen bg-sacred-ivory text-text-primary font-body flex flex-col selection:bg-heritage-gold selection:text-sacred-ivory">
         {children}
       </body>
     </html>
