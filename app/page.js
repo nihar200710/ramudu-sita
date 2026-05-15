@@ -332,10 +332,10 @@ export default function Home() {
           {/* Sanskrit Slokha Reveal */}
           <div ref={slokhaRef} className="py-12 relative">
             <div className="absolute inset-0 bg-heritage-gold/5 blur-3xl rounded-full" />
-            <h3 className="text-3xl md:text-5xl font-samarkan text-royal-gold mb-8 leading-relaxed drop-shadow-sm flex flex-wrap justify-center gap-x-2 md:gap-x-4">
-              {slokhaText.split('').map((char, index) => (
+            <h3 className="text-3xl md:text-5xl font-samarkan text-royal-gold mb-8 leading-relaxed drop-shadow-sm flex flex-wrap justify-center gap-x-3 md:gap-x-5">
+              {slokhaText.split(' ').map((word, index) => (
                 <span key={index} className="slokha-char inline-block">
-                  {char === ' ' ? '\u00A0' : char}
+                  {word}
                 </span>
               ))}
             </h3>
