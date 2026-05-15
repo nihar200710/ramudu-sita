@@ -1,4 +1,5 @@
 import { Inter, Cinzel_Decorative, Tiro_Devanagari_Sanskrit, Cormorant_Garamond, Manrope } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -72,6 +73,7 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-screen bg-sacred-ivory text-text-primary font-body flex flex-col selection:bg-heritage-gold selection:text-sacred-ivory">
         {children}
+        <Analytics />
       </body>
     </html>
   );
