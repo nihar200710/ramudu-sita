@@ -16,8 +16,9 @@ export default function TempleButton({ children, onClick, className = '', disabl
       {/* Gold Shimmer Sweep */}
       <div className="absolute inset-0 bg-gradient-to-r from-heritage-gold/0 via-heritage-gold/20 to-heritage-gold/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
       
-      {/* Floral Glow Bloom on Hover */}
+      {/* Floral Bloom & Mandala Glow on Hover */}
       <div className="absolute inset-0 bg-floral-accent/0 group-hover:bg-floral-accent/10 transition-colors duration-500" />
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700 pointer-events-none bg-[url('/images/textures/mandala_parchment.png')] bg-cover mix-blend-multiply animate-spin-slow" />
       
       {/* Engraved Corner Ornaments */}
       <div className="absolute top-1 left-1 w-3 h-3 border-t-2 border-l-2 border-heritage-gold/60 opacity-70" />

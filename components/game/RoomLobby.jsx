@@ -144,7 +144,7 @@ export default function RoomLobby() {
 
       <div className="pt-4 space-y-4">
         <TempleButton onClick={handleCreateRoom} className="w-full shadow-md">
-          Create Chamber
+          Enter the Sacred Chamber
         </TempleButton>
         
         <div className="flex items-center gap-4 text-heritage-gold/60 font-heading text-sm my-6">
