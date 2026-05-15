@@ -4,13 +4,24 @@ import { useGameStore } from '@/lib/store';
 import TempleButton from '../ui/TempleButton';
 import AncientModal from '../ui/AncientModal';
 import { motion } from 'framer-motion';
-import { Users, Copy, Check } from 'lucide-react';
+import { Users, Copy, Check, Link as LinkIcon } from 'lucide-react';
 
 export default function RoomLobby() {
   const { socket, roomId, setRoomId, players, playerName, setPlayerName, setGameStatus } = useGameStore();
   const [joinCode, setJoinCode] = useState('');
   const [copied, setCopied] = useState(false);
+  const [copiedLink, setCopiedLink] = useState(false);
   const [error, setError] = useState('');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      const roomParam = urlParams.get('room');
+      if (roomParam) {
+        setJoinCode(roomParam);
+      }
+    }
+  }, []);
 
   useEffect(() => {
     if (!socket) return;
@@ -44,6 +55,13 @@ export default function RoomLobby() {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const copyInviteLink = () => {
+    const inviteLink = `${window.location.origin}/?room=${roomId}`;
+    navigator.clipboard.writeText(inviteLink);
+    setCopiedLink(true);
+    setTimeout(() => setCopiedLink(false), 2000);
+  };
+
   if (roomId) {
     return (
       <motion.div 
@@ -59,8 +77,14 @@ export default function RoomLobby() {
             <h2 className="text-sm font-accent text-text-secondary uppercase tracking-[0.2em] mb-1 font-bold">Sacred Chamber</h2>
             <div className="flex items-center gap-4">
               <span className="text-4xl font-heading text-royal-gold tracking-widest font-bold">{roomId}</span>
-              <button suppressHydrationWarning onClick={copyCode} className="p-2 text-royal-gold hover:bg-heritage-gold/10 rounded-md transition-colors">
+              <button suppressHydrationWarning onClick={copyCode} className="p-2 text-royal-gold hover:bg-heritage-gold/10 rounded-md transition-colors" title="Copy Room Code">
                 {copied ? <Check size={20} /> : <Copy size={20} />}
+              </button>
+            </div>
+            <div className="mt-2">
+              <button onClick={copyInviteLink} className="flex items-center gap-2 px-3 py-1 text-xs font-accent font-bold uppercase tracking-wider text-royal-gold border border-heritage-gold/40 rounded hover:bg-heritage-gold/10 transition-colors">
+                {copiedLink ? <Check size={14} /> : <LinkIcon size={14} />}
+                {copiedLink ? 'Link Copied' : 'Copy Invite Link'}
               </button>
             </div>
           </div>

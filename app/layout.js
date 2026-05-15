@@ -30,8 +30,35 @@ const tiro = Tiro_Devanagari_Sanskrit({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://ramudu-sita.onrender.com"),
   title: "Ramudu Sita — Mythological Multiplayer Storytelling Game",
   description: "An Awwwards-quality cinematic storytelling multiplayer game platform inspired by the Ramayana.",
+  openGraph: {
+    title: "Ramudu Sita — Sacred Heritage Storytelling",
+    description: "In the sacred halls, identities are veiled. Find Ramudu, seek Sita in this cinematic multiplayer experience.",
+    url: "https://ramudu-sita.onrender.com",
+    siteName: "Ramudu Sita",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Ramudu Sita Social Image",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ramudu Sita — Sacred Heritage Storytelling",
+    description: "In the sacred halls, identities are veiled. Find Ramudu, seek Sita in this cinematic multiplayer experience.",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }) {
